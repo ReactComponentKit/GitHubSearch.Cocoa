@@ -1,0 +1,2 @@
+# GitHubSearch.Cocoa
+GitHubSearch.Cocoa
