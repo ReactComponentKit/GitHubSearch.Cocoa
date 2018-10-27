@@ -8,7 +8,7 @@
 	<img src="https://img.shields.io/badge/OSX-%3E%3D%2010.11-green.svg" />
 	<img src="https://img.shields.io/badge/Swift-%3E%3D%204.2-orange.svg" />
 	<img src="https://img.shields.io/cocoapods/v/CocoaReactComponentKit.svg" />
-	<img src="https://img.shields.io/github/license/CocoaReactComponentKit/CocoaReactComponentKit.svg" />
+	<img src="https://img.shields.io/github/license/ReactComponentKit/CocoaReactComponentKit.svg" />
 </div>
 
 
@@ -42,7 +42,10 @@ CocoaReactComponentKit provides four components basically.
 
 ## Examples
 
- * Making
+ ![](./art/simple_example.png)
+ 
+ * Above simple example shows how to use NSTableViewComponent and NSCollectionViewComponent. You can find the code at [here](https://github.com/ReactComponentKit/CocoaReactComponentKit/tree/master/CocoaReactComponentKitApp/CocoaReactComponentKitApp)
+ * I'm going to make more examples as soon as possible.
 
 ## How to install
 

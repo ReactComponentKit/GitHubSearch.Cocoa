@@ -47,7 +47,7 @@ open class NSViewComponent: NSView, ReactComponent, ContentSizeProvider {
         
     }
     
-    // It is only called when the component is in UITableView's cell or UICollectionView's cell.
+    // It is only called when the component is in NSTableView's cell or NSCollectionView's cell.
     open override func prepareForReuse() {
         super.prepareForReuse()
     }
@@ -63,7 +63,7 @@ open class NSViewComponent: NSView, ReactComponent, ContentSizeProvider {
         
     }
     
-    // It is only called when the component is in UITableView's cell or UICollectionView's cell
+    // It is only called when the component is in NSTableView's cell or NSCollectionView's cell
     func applyNew<Item>(item: Item) {
         configure(item: item)
         invalidateIntrinsicContentSize()

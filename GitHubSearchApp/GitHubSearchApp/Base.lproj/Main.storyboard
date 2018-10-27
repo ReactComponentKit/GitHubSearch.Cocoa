@@ -695,21 +695,17 @@
                         </connections>
                     </window>
                     <connections>
-                        <segue destination="Ffb-bn-QWt" kind="relationship" relationship="window.shadowedContentViewController" id="Ouu-pl-jgv"/>
+                        <segue destination="Ffb-bn-QWt" kind="relationship" relationship="window.shadowedContentViewController" id="Shl-bc-Dng"/>
                     </connections>
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="250"/>
         </scene>
-        <!--Split View Controller-->
+        <!--Search View Controller-->
         <scene sceneID="r6Q-m2-IsB">
             <objects>
-                <splitViewController id="Ffb-bn-QWt" sceneMemberID="viewController">
-                    <splitViewItems>
-                        <splitViewItem holdingPriority="255" behavior="contentList" id="VG5-T5-Jiv"/>
-                        <splitViewItem holdingPriority="255" behavior="contentList" id="AQu-v2-0Sg"/>
-                    </splitViewItems>
+                <splitViewController id="Ffb-bn-QWt" customClass="SearchViewController" customModule="GitHubSearchApp" customModuleProvider="target" sceneMemberID="viewController">
                     <splitView key="splitView" dividerStyle="thin" vertical="YES" id="hem-zN-WHy">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -719,71 +715,11 @@
                     </splitView>
                     <connections>
                         <outlet property="splitView" destination="hem-zN-WHy" id="RRv-b1-Ff2"/>
-                        <segue destination="u6y-jl-ps7" kind="relationship" relationship="splitItems" id="f2g-wO-ziI"/>
-                        <segue destination="ROs-Ac-zVZ" kind="relationship" relationship="splitItems" id="Dyl-cv-KXP"/>
                     </connections>
                 </splitViewController>
                 <customObject id="S5D-Wg-Uss" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="74" y="721"/>
-        </scene>
-        <!--Search View Controller-->
-        <scene sceneID="m8H-h0-S6W">
-            <objects>
-                <viewController id="u6y-jl-ps7" customClass="SearchViewController" customModule="GitHubSearchApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="kj1-Nf-TK0">
-                        <rect key="frame" x="0.0" y="0.0" width="150" height="300"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <subviews>
-                            <box boxType="custom" borderType="none" borderWidth="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="cJn-sV-8pj">
-                                <rect key="frame" x="0.0" y="0.0" width="150" height="300"/>
-                                <view key="contentView" id="dD6-lH-usc">
-                                    <rect key="frame" x="0.0" y="0.0" width="150" height="300"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                </view>
-                                <color key="fillColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </box>
-                        </subviews>
-                        <constraints>
-                            <constraint firstItem="cJn-sV-8pj" firstAttribute="top" secondItem="kj1-Nf-TK0" secondAttribute="top" id="7A3-Zy-Cqf"/>
-                            <constraint firstAttribute="bottom" secondItem="cJn-sV-8pj" secondAttribute="bottom" id="7Ka-0u-dyV"/>
-                            <constraint firstItem="cJn-sV-8pj" firstAttribute="leading" secondItem="kj1-Nf-TK0" secondAttribute="leading" id="8ff-8q-hl2"/>
-                            <constraint firstAttribute="trailing" secondItem="cJn-sV-8pj" secondAttribute="trailing" id="eQU-Us-4Xu"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <customObject id="Oyo-d2-5UF" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-273" y="1232"/>
-        </scene>
-        <!--Search Result View Controller-->
-        <scene sceneID="p7Z-bb-1BU">
-            <objects>
-                <viewController id="ROs-Ac-zVZ" customClass="SearchResultViewController" customModule="GitHubSearchApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="cMf-tM-7Sx">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <subviews>
-                            <box boxType="custom" borderType="none" borderWidth="0.0" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="zcp-hl-L3W">
-                                <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
-                                <view key="contentView" id="vUM-ph-B7c">
-                                    <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                </view>
-                                <color key="fillColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
-                            </box>
-                        </subviews>
-                        <constraints>
-                            <constraint firstItem="zcp-hl-L3W" firstAttribute="leading" secondItem="cMf-tM-7Sx" secondAttribute="leading" id="HLH-mL-fpt"/>
-                            <constraint firstItem="zcp-hl-L3W" firstAttribute="top" secondItem="cMf-tM-7Sx" secondAttribute="top" id="Yn0-rW-tF6"/>
-                            <constraint firstAttribute="bottom" secondItem="zcp-hl-L3W" secondAttribute="bottom" id="tCu-5s-hw4"/>
-                            <constraint firstAttribute="trailing" secondItem="zcp-hl-L3W" secondAttribute="trailing" id="vda-Ba-lne"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <customObject id="cE4-1c-Jn7" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="325" y="1232"/>
         </scene>
     </scenes>
 </document>

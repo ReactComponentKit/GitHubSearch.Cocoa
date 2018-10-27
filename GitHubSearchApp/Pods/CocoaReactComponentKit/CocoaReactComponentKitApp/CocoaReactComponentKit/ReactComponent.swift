@@ -23,7 +23,7 @@ public enum ComponentDispatchEvent: EventType {
 public protocol ReactComponent {
     var token: Token { get set }
     // ReactComponent only has newStateEventBus if it is want to receive the new state.
-    // If ReactComponent is in UITableView's cell or UICollectionView's cell,
+    // If ReactComponent is in NSTableView's cell or NSCollectionView's cell,
     // it doesn't receive new state via newStateEventBus for the performance reason.
     // If every cell component receive new state event bus, there are many copying state.
     var newStateEventBus: EventBus<ComponentNewStateEvent>? { get }

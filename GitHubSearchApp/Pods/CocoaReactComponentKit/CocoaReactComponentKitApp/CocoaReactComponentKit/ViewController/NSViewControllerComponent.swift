@@ -10,7 +10,7 @@ import Cocoa
 import BKEventBus
 import BKRedux
 
-open class UIViewControllerComponent: NSViewController, ReactComponent {
+open class NSViewControllerComponent: NSViewController, ReactComponent {
     
     public lazy var newStateEventBus: EventBus<ComponentNewStateEvent>? = {
         EventBus(token: self.token)
@@ -18,6 +18,14 @@ open class UIViewControllerComponent: NSViewController, ReactComponent {
     
     public lazy var dispatchEventBus: EventBus<ComponentDispatchEvent> = {
         EventBus(token: self.token)
+    }()
+    
+    
+    private lazy var rootView: NSView = {
+        let view = NSView()
+        view.wantsLayer = true
+        view.layer?.backgroundColor = .white
+        return view
     }()
     
     public var token: Token
@@ -35,10 +43,14 @@ open class UIViewControllerComponent: NSViewController, ReactComponent {
         }
     }
     
+    open override func loadView() {
+        self.view = rootView
+    }
+    
     public required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+        
     private func applyNew(state: State) {
         on(state: state)
     }
