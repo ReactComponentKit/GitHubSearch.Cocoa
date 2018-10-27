@@ -52,6 +52,8 @@
 		4E79F676218484DC00C4433C /* RepoItemComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E79F675218484DC00C4433C /* RepoItemComponent.swift */; };
 		4E79F678218485DE00C4433C /* LoadMoreComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E79F677218485DE00C4433C /* LoadMoreComponent.swift */; };
 		4E79F67A2184B34B00C4433C /* InitAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E79F6792184B34B00C4433C /* InitAction.swift */; };
+		4E79F67C2184EDB800C4433C /* HistoryItemComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E79F67B2184EDB800C4433C /* HistoryItemComponent.swift */; };
+		4E79F67E2184EE9100C4433C /* HistoryItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E79F67D2184EE9100C4433C /* HistoryItemModel.swift */; };
 		4E8B3AB8217E12DC00A0173A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8B3AB7217E12DC00A0173A /* AppDelegate.swift */; };
 		4E8B3ABC217E12DD00A0173A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E8B3ABB217E12DD00A0173A /* Assets.xcassets */; };
 		4E8B3ABF217E12DD00A0173A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E8B3ABD217E12DD00A0173A /* Main.storyboard */; };
@@ -106,6 +108,8 @@
 		4E79F675218484DC00C4433C /* RepoItemComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoItemComponent.swift; sourceTree = "<group>"; };
 		4E79F677218485DE00C4433C /* LoadMoreComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadMoreComponent.swift; sourceTree = "<group>"; };
 		4E79F6792184B34B00C4433C /* InitAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitAction.swift; sourceTree = "<group>"; };
+		4E79F67B2184EDB800C4433C /* HistoryItemComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryItemComponent.swift; sourceTree = "<group>"; };
+		4E79F67D2184EE9100C4433C /* HistoryItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryItemModel.swift; sourceTree = "<group>"; };
 		4E8B3AB4217E12DC00A0173A /* GitHubSearchApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubSearchApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E8B3AB7217E12DC00A0173A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4E8B3ABB217E12DD00A0173A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -222,6 +226,7 @@
 			children = (
 				4E79F6652184481600C4433C /* UserItemModel.swift */,
 				4E79F6672184481C00C4433C /* RepoItemModel.swift */,
+				4E79F67D2184EE9100C4433C /* HistoryItemModel.swift */,
 				4E79F6692184482100C4433C /* LoadMoreItemModel.swift */,
 			);
 			path = SectionModel;
@@ -315,6 +320,7 @@
 				4E79F67121847BBE00C4433C /* ErrorViewControllerComponent.swift */,
 				4E79F67321847C8900C4433C /* UserItemComponent.swift */,
 				4E79F675218484DC00C4433C /* RepoItemComponent.swift */,
+				4E79F67B2184EDB800C4433C /* HistoryItemComponent.swift */,
 				4E79F677218485DE00C4433C /* LoadMoreComponent.swift */,
 			);
 			path = Component;
@@ -496,6 +502,7 @@
 				4E8B3ACD217E185700A0173A /* SearchResultViewController.swift in Sources */,
 				4E79F67021847B4000C4433C /* LoadingViewControllerComponent.swift in Sources */,
 				4E08E77121836F13004172FD /* SearchReposAction.swift in Sources */,
+				4E79F67E2184EE9100C4433C /* HistoryItemModel.swift in Sources */,
 				4E08E78A21836F92004172FD /* UserRepoInfo.swift in Sources */,
 				4E8B3AB8217E12DC00A0173A /* AppDelegate.swift in Sources */,
 				4E08E7BD2183752B004172FD /* SearchScope.swift in Sources */,
@@ -525,6 +532,7 @@
 				4E79F66C21847A9C00C4433C /* HelloViewControllerComponent.swift in Sources */,
 				4E79F65C218447AD00C4433C /* MakeSectionModel.swift in Sources */,
 				4E08E76121836D41004172FD /* StoreKeyowrdAction.swift in Sources */,
+				4E79F67C2184EDB800C4433C /* HistoryItemComponent.swift in Sources */,
 				4E08E77721836F19004172FD /* GitHubSearchServiceProvider.swift in Sources */,
 				4E79F67221847BBE00C4433C /* ErrorViewControllerComponent.swift in Sources */,
 				4E79F6522184475400C4433C /* SelectSearchScope.swift in Sources */,

@@ -17,5 +17,4 @@ class SearchViewController: NSSplitViewController {
         self.addSplitViewItem(NSSplitViewItem(viewController: SearchResultViewController(token: viewModel.token)))
         viewModel.rx_action.accept(InitAction())
     }
-    
 }

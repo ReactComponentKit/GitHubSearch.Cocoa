@@ -13,7 +13,7 @@ import RxSwift
 func logStateToConsole(state: State, action: Action) -> Observable<State> {
     guard let searchState = state as? SearchState else { return .just(state) }
     print("[### State BEGIN ###]")
-    print("\(searchState.viewState)")
+    print("\(searchState)")
     print("[### State END ###]")
     return .just(state)
 }

@@ -10,6 +10,7 @@ import Cocoa
 import SnapKit
 import CocoaReactComponentKit
 import BKEventBus
+import BKRedux
 
 class SearchHistoryViewController: NSViewControllerComponent {
     
@@ -25,6 +26,7 @@ class SearchHistoryViewController: NSViewControllerComponent {
     
     private lazy var tableViewComponent: NSTableViewComponent = {
         let component = NSTableViewComponent(token: self.token, canOnlyDispatchAction: true)
+        component.selectionHighlightStyle = .none
         component.wantsLayer = true
         component.layer?.cornerRadius = 5
         return component
@@ -53,6 +55,7 @@ class SearchHistoryViewController: NSViewControllerComponent {
         textfieldComponent.snp.makeConstraints { (make) in
             make.left.equalToSuperview().offset(16)
             make.right.equalToSuperview().offset(-16)
+            make.width.greaterThanOrEqualTo(200)
             make.top.equalToSuperview().offset(30)
         }
         
@@ -82,6 +85,14 @@ class SearchHistoryViewController: NSViewControllerComponent {
             let searchScope: SearchState.SearchScope = index == 0 ? .user : .repo
             self?.dispatch(action: SelectSearchScopeAction(searchScope: searchScope))
         }
+        
+        tableViewComponent.adapter = adapter
+        tableViewComponent.register(component: HistoryItemComponent.self)
+    }
+    
+    override func on(state: State) {
+        guard let searchState = state as? SearchState, let section = searchState.hitorySectons else { return }
+        adapter.set(section: section)
     }
     
 }

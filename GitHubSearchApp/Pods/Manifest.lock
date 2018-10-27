@@ -4,7 +4,7 @@ PODS:
   - BKRedux (1.1.0):
     - RxCocoa (>= 4.2.0)
     - RxSwift (>= 4.2.0)
-  - CocoaReactComponentKit (0.0.4):
+  - CocoaReactComponentKit (0.0.6):
     - BKEventBus (>= 1.0.7)
     - BKRedux (>= 1.0.0)
     - RxCocoa (>= 4.2.0)
@@ -51,7 +51,7 @@ SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
   BKEventBus: b6ec629c0581c98a9c798f930aadd92b751a3f6b
   BKRedux: 1cd8225d6f74b61a76209bed5f88a7773e401f93
-  CocoaReactComponentKit: 2c26491bcceb528ec718ea2a2c027d2b7ed3062d
+  CocoaReactComponentKit: 5e905f29435efa0dfd32381cc6e3bc14436b70ea
   Moya: a725035953bc1c0eb1be505ab903984501d82440
   Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
   RxCocoa: 78763c7b07d02455598d9fc3c1ad091a28b73635

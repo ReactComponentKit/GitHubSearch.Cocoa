@@ -46,7 +46,7 @@ class UserItemComponent: NSViewComponent {
         let view = NSImageView(frame: .zero)
         view.imageScaling = .scaleProportionallyUpOrDown
         view.wantsLayer = true
-        view.layer?.cornerRadius = 50
+        view.layer?.cornerRadius = 30
         view.layer?.masksToBounds = true
         return view
     }()
@@ -127,8 +127,8 @@ class UserItemComponent: NSViewComponent {
         
         avatarImageView.snp.makeConstraints { (make) in
             make.left.equalToSuperview().offset(16)
-            make.centerY.equalToSuperview()
-            make.width.height.equalTo(100)
+            make.top.equalToSuperview().offset(16)
+            make.width.height.equalTo(60)
         }
         
         labelStackView.snp.makeConstraints { (make) in

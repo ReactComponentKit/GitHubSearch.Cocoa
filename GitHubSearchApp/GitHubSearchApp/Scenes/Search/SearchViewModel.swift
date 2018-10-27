@@ -40,10 +40,12 @@ struct SearchState: State {
     var isLoadingMore: Bool = false
     var page: Int = 1
     var perPage: Int = 40
+    var keywordHistory: [String] = []
     var users: [User] = []
     var userSort: GitHubSearchService.UserSort = .repositories
     var repos: [Repo] = []
     var repoSort: GitHubSearchService.RepoSort = .stars
+    var hitorySectons: SectionModel? = nil
     var sections: [SectionModel] = []
     var route: String? = nil
     var error: (Error, Action)? = nil
@@ -61,18 +63,18 @@ class SearchViewModel: RootViewModelType<SearchState> {
                     SearchView.selectSearchScope,
                     SearchView.setKeyword,
                     SearchView.setPage
-            ],
+                ],
                   reducers: [
                     StateKeyPath(\SearchState.users): SearchView.usersReducer,
                     StateKeyPath(\SearchState.repos): SearchView.reposReducer,
-                    ],
+                ],
                   postwares: [
                     SearchView.makeSectionModel,
                     SearchView.selectViewState,
                     SearchView.resetFlags,
-                    SearchView.makeRoute,
+                    SearchView.makeRoute
                     //logStateToConsole
-            ])
+                ])
     }
     
     override func beforeDispatch(action: Action) -> Action {

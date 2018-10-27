@@ -30,6 +30,11 @@ class LoadMoreComponent: NSViewComponent {
         return .zero
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        reset()
+    }
+    
     override func setupView() {
         addSubview(indicator)
         indicator.snp.makeConstraints { (make) in
@@ -44,9 +49,7 @@ class LoadMoreComponent: NSViewComponent {
     }
     
     override func configure<Item>(item: Item) {
-        indicator.stopAnimation(nil)
-        indicator.isHidden = true
-        loadMoreButton.isHidden = false
+        reset()
     }
     
     @objc func clickButton(_ sender: Any) {
@@ -54,6 +57,12 @@ class LoadMoreComponent: NSViewComponent {
         indicator.isHidden = false
         indicator.startAnimation(nil)
         dispatch(action: LoadMoreAction())
+    }
+    
+    private func reset() {
+        indicator.stopAnimation(nil)
+        indicator.isHidden = true
+        loadMoreButton.isHidden = false
     }
 }
 

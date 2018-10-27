@@ -66,8 +66,11 @@ open class NSTableViewComponent: NSViewComponent {
     
     public func register<NSViewComponentType: NSViewComponent>(component: NSViewComponentType.Type) {
         let cellClass = TableViewComponentItem.self
+        let frameworkBundle = Bundle(for: cellClass)
+        let bundleURL = frameworkBundle.resourceURL?.appendingPathComponent("CocoaReactComponentKit.bundle")
+        let resourceBundle = Bundle(url: bundleURL!)
         let identifier = NSUserInterfaceItemIdentifier(rawValue: String(describing: component))
-        let nib = NSNib(nibNamed: NSNib.Name("TableViewComponentItem"), bundle: Bundle(for: cellClass))
+        let nib = NSNib(nibNamed: NSNib.Name("TableViewComponentItem"), bundle: resourceBundle)
         self.tableView.register(nib, forIdentifier: identifier)
     }
     

@@ -16,6 +16,7 @@ extension SearchView {
         guard var mutableState = state as? SearchState else { return .just(state) }
         
         return Single.create(subscribe: { (single) -> Disposable in
+            // search result
             let sectionModel: SectionModel
             switch mutableState.searchScope {
             case .user:
@@ -32,6 +33,10 @@ extension SearchView {
             } else {
                 mutableState.sections = [sectionModel]
             }
+            
+            // history
+            mutableState.hitorySectons = makeHistorySectionModel(history: mutableState.keywordHistory)
+            
             single(.success(mutableState))
             return Disposables.create()
         }).asObservable()
@@ -49,6 +54,12 @@ extension SearchView {
         guard repos.isEmpty == false else { return DefaultSectionModel(items: []) }
         var items: [ItemModel] = repos.map(RepoItemModel.init)
         items.append(LoadMoreItemModel())
+        return DefaultSectionModel(items: items)
+    }
+    
+    private static func makeHistorySectionModel(history: [String]) -> SectionModel {
+        guard history.isEmpty == false else { return DefaultSectionModel(items: []) }
+        let items = history.map(HistoryItemModel.init)
         return DefaultSectionModel(items: items)
     }
 }
