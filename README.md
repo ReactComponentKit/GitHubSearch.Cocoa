@@ -2,6 +2,8 @@
 
 GitHubSearch.Cocoa is an example for CocoaReactComponentKit. It searches github's users or repositories. Actually, It is remake version of [GitHubSearch iOS App](https://github.com/ReactComponentKit/GitHubSearch) for [ReactComponentKit](https://github.com/ReactComponentKit/ReactComponentKit). It can reuse Redux layer without modification.
 
+![](art/app.gif)
+
 ## Before Build
 
 You should set yours client_id and client_secret from GitHub.com. You can get it from [here.](https://github.com/settings/developers) 
@@ -20,8 +22,6 @@ enum GitHubAPIKey {
 ## Build and Run it!
 
 You might see the below screens :)
-
-![](art/app.gif)
 
 | ![](art/img01.png) | ![](art/img02.png) |
 |:-:|:-:|
