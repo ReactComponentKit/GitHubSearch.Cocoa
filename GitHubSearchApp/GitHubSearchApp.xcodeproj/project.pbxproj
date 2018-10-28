@@ -58,6 +58,9 @@
 		4E7E1BB521855C8A00776A12 /* WebViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7E1BB421855C8A00776A12 /* WebViewModel.swift */; };
 		4E7E1BB921856DFE00776A12 /* UrlRequestReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7E1BB821856DFE00776A12 /* UrlRequestReducer.swift */; };
 		4E7E1BBC2185705C00776A12 /* CloseWebViewAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7E1BBB2185705C00776A12 /* CloseWebViewAction.swift */; };
+		4E7E1BC2218576F400776A12 /* AppDelegateLogHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7E1BBE218576F400776A12 /* AppDelegateLogHandler.swift */; };
+		4E7E1BC3218576F400776A12 /* AppDelegateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7E1BBF218576F400776A12 /* AppDelegateHandler.swift */; };
+		4E7E1BC5218576F400776A12 /* AppDelegateRequiredValueChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7E1BC1218576F400776A12 /* AppDelegateRequiredValueChecker.swift */; };
 		4E8B3AB8217E12DC00A0173A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8B3AB7217E12DC00A0173A /* AppDelegate.swift */; };
 		4E8B3ABC217E12DD00A0173A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E8B3ABB217E12DD00A0173A /* Assets.xcassets */; };
 		4E8B3ABF217E12DD00A0173A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E8B3ABD217E12DD00A0173A /* Main.storyboard */; };
@@ -118,6 +121,9 @@
 		4E7E1BB421855C8A00776A12 /* WebViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewModel.swift; sourceTree = "<group>"; };
 		4E7E1BB821856DFE00776A12 /* UrlRequestReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlRequestReducer.swift; sourceTree = "<group>"; };
 		4E7E1BBB2185705C00776A12 /* CloseWebViewAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseWebViewAction.swift; sourceTree = "<group>"; };
+		4E7E1BBE218576F400776A12 /* AppDelegateLogHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegateLogHandler.swift; sourceTree = "<group>"; };
+		4E7E1BBF218576F400776A12 /* AppDelegateHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegateHandler.swift; sourceTree = "<group>"; };
+		4E7E1BC1218576F400776A12 /* AppDelegateRequiredValueChecker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegateRequiredValueChecker.swift; sourceTree = "<group>"; };
 		4E8B3AB4217E12DC00A0173A /* GitHubSearchApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubSearchApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E8B3AB7217E12DC00A0173A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4E8B3ABB217E12DD00A0173A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -303,6 +309,16 @@
 			path = Middleware;
 			sourceTree = "<group>";
 		};
+		4E7E1BBD218576F400776A12 /* AppDelegateHanders */ = {
+			isa = PBXGroup;
+			children = (
+				4E7E1BBE218576F400776A12 /* AppDelegateLogHandler.swift */,
+				4E7E1BBF218576F400776A12 /* AppDelegateHandler.swift */,
+				4E7E1BC1218576F400776A12 /* AppDelegateRequiredValueChecker.swift */,
+			);
+			path = AppDelegateHanders;
+			sourceTree = "<group>";
+		};
 		4E8B3AAB217E12DC00A0173A = {
 			isa = PBXGroup;
 			children = (
@@ -324,6 +340,7 @@
 		4E8B3AB6217E12DC00A0173A /* GitHubSearchApp */ = {
 			isa = PBXGroup;
 			children = (
+				4E7E1BBD218576F400776A12 /* AppDelegateHanders */,
 				4E08E76421836F13004172FD /* Actions */,
 				4E08E77321836F19004172FD /* APIService */,
 				4E8B3AD3217E1A2F00A0173A /* Component */,
@@ -544,6 +561,7 @@
 				4E08E78A21836F92004172FD /* UserRepoInfo.swift in Sources */,
 				4E8B3AB8217E12DC00A0173A /* AppDelegate.swift in Sources */,
 				4E08E7BD2183752B004172FD /* SearchScope.swift in Sources */,
+				4E7E1BC3218576F400776A12 /* AppDelegateHandler.swift in Sources */,
 				4E08E77221836F13004172FD /* InputSearchKeywordAction.swift in Sources */,
 				4E79F662218447DB00C4433C /* MakeRoute.swift in Sources */,
 				4E08E76F21836F13004172FD /* LoadMoreAction.swift in Sources */,
@@ -557,6 +575,7 @@
 				4E79F6502184474500C4433C /* ResetSomeState.swift in Sources */,
 				4E79F67A2184B34B00C4433C /* InitAction.swift in Sources */,
 				4E79F66E21847B1400C4433C /* EmptyViewControllerComponent.swift in Sources */,
+				4E7E1BC2218576F400776A12 /* AppDelegateLogHandler.swift in Sources */,
 				4E08E77A21836F30004172FD /* NSView+RxTap.swift in Sources */,
 				4E08E76E21836F13004172FD /* SearchUsersAction.swift in Sources */,
 				4E08E76C21836F13004172FD /* SelectSearchScopeAction.swift in Sources */,
@@ -569,6 +588,7 @@
 				4E79F664218447F100C4433C /* LogStateToConsole.swift in Sources */,
 				4E79F6542184476200C4433C /* SetKeyword.swift in Sources */,
 				4E79F66C21847A9C00C4433C /* HelloViewControllerComponent.swift in Sources */,
+				4E7E1BC5218576F400776A12 /* AppDelegateRequiredValueChecker.swift in Sources */,
 				4E79F65C218447AD00C4433C /* MakeSectionModel.swift in Sources */,
 				4E08E76121836D41004172FD /* StoreKeyowrdAction.swift in Sources */,
 				4E79F67C2184EDB800C4433C /* HistoryItemComponent.swift in Sources */,
