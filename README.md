@@ -1,6 +1,6 @@
 # GitHubSearch.Cocoa
 
-GitHubSearch.Cocoa is an example for CocoaReactComponentKit. It searches github's users or repositories. Actually, It is remake version of GitHubSearch iOS App for ReactComponentKit. It can reuse Redux layer without modification.
+GitHubSearch.Cocoa is an example for CocoaReactComponentKit. It searches github's users or repositories. Actually, It is remake version of [GitHubSearch iOS App](https://github.com/ReactComponentKit/GitHubSearch) for [ReactComponentKit](https://github.com/ReactComponentKit/ReactComponentKit). It can reuse Redux layer without modification.
 
 ## Before Build
 
