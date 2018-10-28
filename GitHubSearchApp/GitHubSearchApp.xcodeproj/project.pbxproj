@@ -54,6 +54,10 @@
 		4E79F67A2184B34B00C4433C /* InitAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E79F6792184B34B00C4433C /* InitAction.swift */; };
 		4E79F67C2184EDB800C4433C /* HistoryItemComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E79F67B2184EDB800C4433C /* HistoryItemComponent.swift */; };
 		4E79F67E2184EE9100C4433C /* HistoryItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E79F67D2184EE9100C4433C /* HistoryItemModel.swift */; };
+		4E7E1BB221855C3B00776A12 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7E1BB121855C3B00776A12 /* WebViewController.swift */; };
+		4E7E1BB521855C8A00776A12 /* WebViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7E1BB421855C8A00776A12 /* WebViewModel.swift */; };
+		4E7E1BB921856DFE00776A12 /* UrlRequestReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7E1BB821856DFE00776A12 /* UrlRequestReducer.swift */; };
+		4E7E1BBC2185705C00776A12 /* CloseWebViewAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7E1BBB2185705C00776A12 /* CloseWebViewAction.swift */; };
 		4E8B3AB8217E12DC00A0173A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8B3AB7217E12DC00A0173A /* AppDelegate.swift */; };
 		4E8B3ABC217E12DD00A0173A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E8B3ABB217E12DD00A0173A /* Assets.xcassets */; };
 		4E8B3ABF217E12DD00A0173A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E8B3ABD217E12DD00A0173A /* Main.storyboard */; };
@@ -110,6 +114,10 @@
 		4E79F6792184B34B00C4433C /* InitAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitAction.swift; sourceTree = "<group>"; };
 		4E79F67B2184EDB800C4433C /* HistoryItemComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryItemComponent.swift; sourceTree = "<group>"; };
 		4E79F67D2184EE9100C4433C /* HistoryItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryItemModel.swift; sourceTree = "<group>"; };
+		4E7E1BB121855C3B00776A12 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		4E7E1BB421855C8A00776A12 /* WebViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewModel.swift; sourceTree = "<group>"; };
+		4E7E1BB821856DFE00776A12 /* UrlRequestReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlRequestReducer.swift; sourceTree = "<group>"; };
+		4E7E1BBB2185705C00776A12 /* CloseWebViewAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseWebViewAction.swift; sourceTree = "<group>"; };
 		4E8B3AB4217E12DC00A0173A /* GitHubSearchApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubSearchApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E8B3AB7217E12DC00A0173A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4E8B3ABB217E12DD00A0173A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -235,6 +243,7 @@
 		4E79F6472184462600C4433C /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				4E7E1BB021855C2800776A12 /* WebView */,
 				4E79F6482184463800C4433C /* Search */,
 			);
 			path = Scenes;
@@ -265,6 +274,33 @@
 				4E8B3ACB217E185700A0173A /* SearchResultViewController.swift */,
 			);
 			path = SearchResult;
+			sourceTree = "<group>";
+		};
+		4E7E1BB021855C2800776A12 /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				4E7E1BB621856DB500776A12 /* Action */,
+				4E7E1BBA21856E7900776A12 /* Middleware */,
+				4E7E1BB421855C8A00776A12 /* WebViewModel.swift */,
+				4E7E1BB121855C3B00776A12 /* WebViewController.swift */,
+			);
+			path = WebView;
+			sourceTree = "<group>";
+		};
+		4E7E1BB621856DB500776A12 /* Action */ = {
+			isa = PBXGroup;
+			children = (
+				4E7E1BBB2185705C00776A12 /* CloseWebViewAction.swift */,
+			);
+			path = Action;
+			sourceTree = "<group>";
+		};
+		4E7E1BBA21856E7900776A12 /* Middleware */ = {
+			isa = PBXGroup;
+			children = (
+				4E7E1BB821856DFE00776A12 /* UrlRequestReducer.swift */,
+			);
+			path = Middleware;
 			sourceTree = "<group>";
 		};
 		4E8B3AAB217E12DC00A0173A = {
@@ -492,6 +528,7 @@
 				4E79F676218484DC00C4433C /* RepoItemComponent.swift in Sources */,
 				4E08E7BA218373FD004172FD /* GitHubAPIKey.swift in Sources */,
 				4E08E77021836F13004172FD /* ClickItemAction.swift in Sources */,
+				4E7E1BB921856DFE00776A12 /* UrlRequestReducer.swift in Sources */,
 				4E08E78C21836F92004172FD /* Repo.swift in Sources */,
 				4E79F6682184481C00C4433C /* RepoItemModel.swift in Sources */,
 				4E79F646218445F900C4433C /* SearchViewModel.swift in Sources */,
@@ -502,6 +539,7 @@
 				4E8B3ACD217E185700A0173A /* SearchResultViewController.swift in Sources */,
 				4E79F67021847B4000C4433C /* LoadingViewControllerComponent.swift in Sources */,
 				4E08E77121836F13004172FD /* SearchReposAction.swift in Sources */,
+				4E7E1BBC2185705C00776A12 /* CloseWebViewAction.swift in Sources */,
 				4E79F67E2184EE9100C4433C /* HistoryItemModel.swift in Sources */,
 				4E08E78A21836F92004172FD /* UserRepoInfo.swift in Sources */,
 				4E8B3AB8217E12DC00A0173A /* AppDelegate.swift in Sources */,
@@ -526,6 +564,7 @@
 				4E1E3AEE2181FAB1001BDC30 /* TextfieldComponent.swift in Sources */,
 				4E79F67421847C8900C4433C /* UserItemComponent.swift in Sources */,
 				4E79F65E218447C200C4433C /* SelectViewState.swift in Sources */,
+				4E7E1BB521855C8A00776A12 /* WebViewModel.swift in Sources */,
 				4E08E77621836F19004172FD /* GitHubSearchService.swift in Sources */,
 				4E79F664218447F100C4433C /* LogStateToConsole.swift in Sources */,
 				4E79F6542184476200C4433C /* SetKeyword.swift in Sources */,
@@ -533,6 +572,7 @@
 				4E79F65C218447AD00C4433C /* MakeSectionModel.swift in Sources */,
 				4E08E76121836D41004172FD /* StoreKeyowrdAction.swift in Sources */,
 				4E79F67C2184EDB800C4433C /* HistoryItemComponent.swift in Sources */,
+				4E7E1BB221855C3B00776A12 /* WebViewController.swift in Sources */,
 				4E08E77721836F19004172FD /* GitHubSearchServiceProvider.swift in Sources */,
 				4E79F67221847BBE00C4433C /* ErrorViewControllerComponent.swift in Sources */,
 				4E79F6522184475400C4433C /* SelectSearchScope.swift in Sources */,

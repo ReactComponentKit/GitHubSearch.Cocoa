@@ -84,5 +84,10 @@ class SearchResultViewController: NSViewControllerComponent {
     override func on(state: State) {
         guard let searchState = state as? SearchState else { return }
         handle(state: searchState)
+        if let route = searchState.route {
+            let vc = WebViewController(viewModel: WebViewModel(url: route))
+            //self.present(, animator: NSViewControllerPresentationAnimator()
+            self.presentAsSheet(vc)
+        }
     }
 }
