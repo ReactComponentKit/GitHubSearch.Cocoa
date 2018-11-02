@@ -38,7 +38,7 @@ class WebViewModel: RootViewModelType<WebViewState> {
     init(url: String) {
         self.url = url
         super.init()
-        store.set(initailState: WebViewState(url: url),
+        store.set(initialState: WebViewState(url: url),
                   middlewares: [
                     makeUrlRequest
                   ],

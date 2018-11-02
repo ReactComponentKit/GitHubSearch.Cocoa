@@ -78,10 +78,8 @@ class WebViewController: NSViewController {
         
         closeButton
             .rx
-            .leftClickGesture()
-            .filter({ (gesture) -> Bool in
-                return gesture.state == .ended
-            })
+            .clickGesture()
+            .when(.ended)
             .map { _ in return CloseWebViewAction() }
             .bind(to: viewModel.rx_action)
             .disposed(by: disposeBag)

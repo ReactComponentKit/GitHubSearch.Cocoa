@@ -51,7 +51,7 @@ extension NSView {
     }
     
     func onTap(action: @escaping () -> Swift.Void) -> Disposable {
-        return self.rx.leftClickGesture().asDriver().drive(onNext: { [weak self] (recognizer) in
+        return self.rx.clickGesture().asDriver().drive(onNext: { [weak self] (recognizer) in
             guard let strongSelf = self else { return }
 
             let hitPoint = recognizer.location(in: strongSelf)
