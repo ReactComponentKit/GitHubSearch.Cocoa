@@ -42,10 +42,13 @@ CocoaReactComponentKit provides four components basically.
 
 ## Examples
 
+ ![](https://raw.githubusercontent.com/ReactComponentKit/GitHubSearch.Cocoa/master/art/app.gif)
+ 
+ * Above example is a [GutHubSearch for Cocoa app](https://github.com/ReactComponentKit/GitHubSearch.Cocoa). It is remake version of [GitHubSearch iOS App](https://github.com/ReactComponentKit/GitHubSearch) for [ReactComponentKit](https://github.com/ReactComponentKit/ReactComponentKit). You can find the code at [GitHubSearch.Cocoa](https://github.com/ReactComponentKit/GitHubSearch.Cocoa)
+
  ![](./art/simple_example.png)
  
  * Above simple example shows how to use NSTableViewComponent and NSCollectionViewComponent. You can find the code at [here](https://github.com/ReactComponentKit/CocoaReactComponentKit/tree/master/CocoaReactComponentKitApp/CocoaReactComponentKitApp)
- * I'm going to make more examples as soon as possible.
 
 ## How to install
 

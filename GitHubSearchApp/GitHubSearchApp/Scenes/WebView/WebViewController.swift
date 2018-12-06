@@ -78,7 +78,7 @@ class WebViewController: NSViewController {
         
         closeButton
             .rx
-            .clickGesture()
+            .leftClickGesture()
             .when(.ended)
             .map { _ in return CloseWebViewAction() }
             .bind(to: viewModel.rx_action)
