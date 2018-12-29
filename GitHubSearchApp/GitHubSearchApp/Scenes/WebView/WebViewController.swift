@@ -56,7 +56,7 @@ class WebViewController: NSViewController {
             make.top.equalTo(closeButton.snp.bottom).offset(16)
             make.left.right.bottom.equalToSuperview()
         }
-        viewModel.rx_action.accept(InitAction())
+        viewModel.dispatch(action: InitAction())
         
         viewModel
             .output
@@ -81,7 +81,7 @@ class WebViewController: NSViewController {
             .leftClickGesture()
             .when(.ended)
             .map { _ in return CloseWebViewAction() }
-            .bind(to: viewModel.rx_action)
+            .bind(onNext: viewModel.dispatch)
             .disposed(by: disposeBag)
         
     }

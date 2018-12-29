@@ -65,8 +65,8 @@ class SearchViewModel: RootViewModelType<SearchState> {
                     SearchView.setPage
                 ],
                   reducers: [
-                    StateKeyPath(\SearchState.users): SearchView.usersReducer,
-                    StateKeyPath(\SearchState.repos): SearchView.reposReducer,
+                    SearchView.usersReducer,
+                    SearchView.reposReducer,
                 ],
                   postwares: [
                     SearchView.makeSectionModel,
@@ -78,7 +78,7 @@ class SearchViewModel: RootViewModelType<SearchState> {
     }
     
     override func beforeDispatch(action: Action) -> Action {
-        guard let state = store.state as? SearchState else { return VoidAction() }
+        guard let state = store.state else { return VoidAction() }
                 
         switch action {
         case let act as InputSearchKeywordAction:
@@ -118,11 +118,11 @@ class SearchViewModel: RootViewModelType<SearchState> {
     }
     
     func showEmptyView() {
-        rx_action.accept(ShowEmptyViewAction())
+        dispatch(action: ShowEmptyViewAction())
     }
     
     private func viewState(for action: Action) -> SearchState.ViewState {
-        guard let state = store.state as? SearchState else { return .hello }
+        guard let state = store.state else { return .hello }
         
         let hasContent = state.sections.isEmpty == false
         

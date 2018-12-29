@@ -42,7 +42,7 @@ class WebViewModel: RootViewModelType<WebViewState> {
                   middlewares: [
                     makeUrlRequest
                   ],
-                  reducers: [:],
+                  reducers: [],
                   postwares: [])
     }
     
