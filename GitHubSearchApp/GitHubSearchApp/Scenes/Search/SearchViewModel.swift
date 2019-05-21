@@ -78,7 +78,7 @@ class SearchViewModel: RootViewModelType<SearchState> {
     }
     
     override func beforeDispatch(action: Action) -> Action {
-        guard let state = store.state else { return VoidAction() }
+        let state = store.state
                 
         switch action {
         case let act as InputSearchKeywordAction:
@@ -113,8 +113,8 @@ class SearchViewModel: RootViewModelType<SearchState> {
         eventBus.post(event: .on(state: newState))
     }
     
-    override func on(error: Error, action: Action, onState state: SearchState) {
-        eventBus.post(event: .on(state: state))
+    override func on(error: Error, action: Action) {
+        eventBus.post(event: .on(state: store.state))
     }
     
     func showEmptyView() {
@@ -122,7 +122,7 @@ class SearchViewModel: RootViewModelType<SearchState> {
     }
     
     private func viewState(for action: Action) -> SearchState.ViewState {
-        guard let state = store.state else { return .hello }
+        let state = store.state
         
         let hasContent = state.sections.isEmpty == false
         

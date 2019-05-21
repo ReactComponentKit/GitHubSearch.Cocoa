@@ -1,37 +1,40 @@
 PODS:
-  - Alamofire (4.8.0)
-  - BKEventBus (1.0.8)
-  - BKRedux (1.2.1):
+  - Alamofire (4.8.2)
+  - BKEventBus (1.0.9)
+  - BKRedux (1.3.6):
     - RxCocoa (>= 4.2.0)
     - RxSwift (>= 4.2.0)
-  - CocoaReactComponentKit (0.0.8):
+  - CocoaReactComponentKit (0.2.5):
     - BKEventBus (>= 1.0.7)
     - BKRedux (>= 1.0.0)
     - RxCocoa (>= 4.2.0)
     - RxSwift (>= 4.2.0)
-  - Moya (12.0.1):
-    - Moya/Core (= 12.0.1)
-  - Moya/Core (12.0.1):
+  - Moya (13.0.1):
+    - Moya/Core (= 13.0.1)
+  - Moya/Core (13.0.1):
     - Alamofire (~> 4.1)
-    - Result (~> 4.0)
-  - Result (4.0.0)
-  - RxAtomic (4.4.0)
-  - RxCocoa (4.4.0):
-    - RxSwift (~> 4.0)
-  - RxGesture (2.1.0):
-    - RxCocoa (~> 4.4.0)
-    - RxSwift (~> 4.4.0)
-  - RxSwift (4.4.0):
-    - RxAtomic (~> 4.4)
-  - SDWebImage (4.4.3):
-    - SDWebImage/Core (= 4.4.3)
-  - SDWebImage/Core (4.4.3)
-  - SnapKit (4.2.0)
+    - Result (~> 4.1)
+  - Result (4.1.0)
+  - RxCocoa (5.0.0):
+    - RxRelay (~> 5)
+    - RxSwift (~> 5)
+  - RxGesture (3.0.0):
+    - RxCocoa (~> 5.0)
+    - RxSwift (~> 5.0)
+  - RxRelay (5.0.0):
+    - RxSwift (~> 5)
+  - RxSwift (5.0.0)
+  - SDWebImage (5.0.3):
+    - SDWebImage/Core (= 5.0.3)
+  - SDWebImage/Core (5.0.3)
+  - SnapKit (5.0.0)
 
 DEPENDENCIES:
   - CocoaReactComponentKit
   - Moya
+  - RxCocoa
   - RxGesture
+  - RxSwift
   - SDWebImage
   - SnapKit
 
@@ -43,27 +46,27 @@ SPEC REPOS:
     - CocoaReactComponentKit
     - Moya
     - Result
-    - RxAtomic
     - RxCocoa
     - RxGesture
+    - RxRelay
     - RxSwift
     - SDWebImage
     - SnapKit
 
 SPEC CHECKSUMS:
-  Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
-  BKEventBus: b6ec629c0581c98a9c798f930aadd92b751a3f6b
-  BKRedux: 98566aa52ccc971ff3f406ac996689d36aebc083
-  CocoaReactComponentKit: fa69a5c89779f186a28f4ddaa371034b1339e3c3
-  Moya: cf730b3cd9e005401ef37a85143aa141a12fd38f
-  Result: 7645bb3f50c2ce726dd0ff2fa7b6f42bbe6c3713
-  RxAtomic: eacf60db868c96bfd63320e28619fe29c179656f
-  RxCocoa: df63ebf7b9a70d6b4eeea407ed5dd4efc8979749
-  RxGesture: 7f6dfb45dbde06e618c24442d38493e3144f2c95
-  RxSwift: 5976ecd04fc2fefd648827c23de5e11157faa973
-  SDWebImage: c5594f1a19c48d526d321e548902b56b479cd508
-  SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
+  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  BKEventBus: c18a022d313e766f65fcbec073b254db4ac555b7
+  BKRedux: d13ec35a42d57a1cc3c41ea5caa262b7a8210be3
+  CocoaReactComponentKit: c6b4e7301a3595f7df33bca4ac457651beeb5297
+  Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
+  Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
+  RxCocoa: fcf32050ac00d801f34a7f71d5e8e7f23026dcd8
+  RxGesture: 0cd8e37ff9a266e1c31f46bcaed6de1c536bc81e
+  RxRelay: 4f7409406a51a55cd88483f21ed898c234d60f18
+  RxSwift: 8b0671caa829a763bbce7271095859121cbd895f
+  SDWebImage: d4f87d7d36c8a4d9f9459dc282e0caa057fdf935
+  SnapKit: fd22d10eb9aff484d79a8724eab922c1ddf89bcf
 
-PODFILE CHECKSUM: 2a66798b4d9d6d907457e570e91da8740ddddf70
+PODFILE CHECKSUM: 09a8baaa79865e5105e6816bd4b8c97f2219d62e
 
-COCOAPODS: 1.6.0.beta.1
+COCOAPODS: 1.6.1

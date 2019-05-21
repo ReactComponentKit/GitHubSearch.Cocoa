@@ -24,13 +24,13 @@ class SegmentComponent: NSViewComponent {
     public var changedSelectedSegment: ComponentEvent? = nil
     
     convenience init(token: Token, labels: [String]) {
-        self.init(token: token, canOnlyDispatchAction: true)
+        self.init(token: token, receiveState: true)
         self.labels = labels
         setupView()
     }
     
-    required init(token: Token, canOnlyDispatchAction: Bool) {
-        super.init(token: token, canOnlyDispatchAction: canOnlyDispatchAction)
+    required init(token: Token, receiveState: Bool) {
+        super.init(token: token, receiveState: receiveState)
     }
     
     required init?(coder aDecoder: NSCoder) {

@@ -48,7 +48,7 @@ class LoadMoreComponent: NSViewComponent {
         }
     }
     
-    override func configure<Item>(item: Item) {
+    override func configure<Item>(item: Item, at indexPath: IndexPath) {
         reset()
     }
     

@@ -51,17 +51,22 @@ open class NSCollectionViewComponent: NSViewComponent {
         }
     }
     
-    public required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    public required init(token: Token, canOnlyDispatchAction: Bool = true) {
+    public required init(token: Token, receiveState: Bool = false) {
         let defaultLayout =  NSCollectionViewFlowLayout()
         defaultLayout.scrollDirection = .vertical
         self.collectionView = NSCollectionView()
         self.collectionView.collectionViewLayout = defaultLayout
         self.collectionView.isSelectable = true
-        super.init(token: token, canOnlyDispatchAction: canOnlyDispatchAction)
+        super.init(token: token, receiveState: receiveState)
+    }
+    
+    public required init?(coder aDecoder: NSCoder) {
+        let defaultLayout =  NSCollectionViewFlowLayout()
+        defaultLayout.scrollDirection = .vertical
+        self.collectionView = NSCollectionView()
+        self.collectionView.collectionViewLayout = defaultLayout
+        self.collectionView.isSelectable = true
+        super.init(coder: aDecoder)
     }
     
     open override func setupView() {

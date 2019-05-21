@@ -34,7 +34,7 @@ class TextfieldComponent: NSViewComponent {
         textfield
             .rx
             .text
-            .debounce(0.5, scheduler: MainScheduler.instance)
+            .debounce(DispatchTimeInterval.milliseconds(500), scheduler: MainScheduler.instance)
             .subscribe(onNext: { [weak self] (str) in
                 self?.changedText?(str)
             })
@@ -43,7 +43,7 @@ class TextfieldComponent: NSViewComponent {
         textfield
             .rx
             .controlEvent
-            .debounce(0.5, scheduler: MainScheduler.instance)
+            .debounce(DispatchTimeInterval.milliseconds(500), scheduler: MainScheduler.instance)
             .subscribe(onNext: { [weak self] in
                 self?.changedText?(self?.textfield.stringValue)
             })

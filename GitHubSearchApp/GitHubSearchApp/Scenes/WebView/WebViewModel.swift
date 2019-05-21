@@ -16,6 +16,11 @@ struct WebViewState: State {
     var url: String
     var error: (Error, Action)? = nil
     var urlRequest: URLRequest? = nil
+    
+    init() {
+        self.url = ""
+    }
+    
     init(url: String) {
         self.url = url
     }

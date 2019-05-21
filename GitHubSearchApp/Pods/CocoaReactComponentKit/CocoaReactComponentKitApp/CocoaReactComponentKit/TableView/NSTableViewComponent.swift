@@ -51,6 +51,14 @@ open class NSTableViewComponent: NSViewComponent {
         }
     }
     
+    public required init(token: Token, receiveState: Bool = false) {
+        super.init(token: token, receiveState: receiveState)
+    }
+    
+    public required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
     open override func setupView() {
         scrollView.documentView = tableView
         addSubview(scrollView)

@@ -35,11 +35,11 @@ open class NSCollectionViewAdapter: NSObject, NSCollectionViewDataSource, NSColl
         
         if let componentItem = item as? CollectionViewComponentItem {
             if let rootComponentView = componentItem.rootComponentView {
-                rootComponentView.applyNew(item: itemModel)
+                rootComponentView.applyNew(item: itemModel, at: indexPath)
             } else {
                 if let token = collectionViewComponent?.token {
-                    let component = itemModel.componentClass.init(token: token, canOnlyDispatchAction: true)
-                    component.applyNew(item: itemModel)
+                    let component = itemModel.componentClass.init(token: token, receiveState: false)
+                    component.applyNew(item: itemModel, at: indexPath)
                     componentItem.rootComponentView = component
                 }
             }
@@ -59,10 +59,10 @@ open class NSCollectionViewAdapter: NSObject, NSCollectionViewDataSource, NSColl
             let view = collectionView.makeSupplementaryView(ofKind: kind, withIdentifier: identifier, for: indexPath)
             if let componentView = view as? CollectionSectionHeaderView {
                 if let rootComponentView = componentView.rootComponentView {
-                    rootComponentView.applyNew(item: header)
+                    rootComponentView.applyNew(item: header, at: indexPath)
                 } else {
-                    let rootComponentView = header.componentClass.init(token: token, canOnlyDispatchAction: true)
-                    rootComponentView.applyNew(item: header)
+                    let rootComponentView = header.componentClass.init(token: token, receiveState: false)
+                    rootComponentView.applyNew(item: header, at: indexPath)
                     componentView.rootComponentView = rootComponentView
                 }
             }
@@ -75,10 +75,10 @@ open class NSCollectionViewAdapter: NSObject, NSCollectionViewDataSource, NSColl
             let view = collectionView.makeSupplementaryView(ofKind: kind, withIdentifier: identifier, for: indexPath)
             if let componentView = view as? CollectionSectionFooterView {
                 if let rootComponentView = componentView.rootComponentView {
-                    rootComponentView.applyNew(item: footer)
+                    rootComponentView.applyNew(item: footer, at: indexPath)
                 } else {
-                    let rootComponentView = footer.componentClass.init(token: token, canOnlyDispatchAction: true)
-                    rootComponentView.applyNew(item: footer)
+                    let rootComponentView = footer.componentClass.init(token: token, receiveState: false)
+                    rootComponentView.applyNew(item: footer, at: indexPath)
                     componentView.rootComponentView = rootComponentView
                 }
             }
@@ -143,8 +143,10 @@ open class NSCollectionViewAdapter: NSObject, NSCollectionViewDataSource, NSColl
                     let newHashable = newSection.items.map { $0.id }
                     
                     let changes = oldHashable.extendedDiff(newHashable)
-                    self.sections[section] = newSection
-                    self.collectionViewComponent?.collectionView.apply(changes)
+                    if changes.isEmpty == false {
+                        self.sections[section] = newSection
+                        self.collectionViewComponent?.collectionView.apply(changes)
+                    }
                     section += 1
                 }
             }

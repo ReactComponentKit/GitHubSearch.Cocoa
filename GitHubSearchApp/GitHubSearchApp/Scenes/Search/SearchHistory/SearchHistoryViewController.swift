@@ -15,7 +15,7 @@ import BKRedux
 class SearchHistoryViewController: NSViewControllerComponent {
     
     private lazy var textfieldComponent: TextfieldComponent = {
-        let component = TextfieldComponent(token: self.token, canOnlyDispatchAction: true)
+        let component = TextfieldComponent(token: self.token, receiveState: false)
         return component
     }()
     
@@ -25,7 +25,7 @@ class SearchHistoryViewController: NSViewControllerComponent {
     }()
     
     private lazy var tableViewComponent: NSTableViewComponent = {
-        let component = NSTableViewComponent(token: self.token, canOnlyDispatchAction: true)
+        let component = NSTableViewComponent(token: self.token, receiveState: false)
         component.selectionHighlightStyle = .none
         component.wantsLayer = true
         component.layer?.cornerRadius = 5
@@ -37,8 +37,8 @@ class SearchHistoryViewController: NSViewControllerComponent {
         return adapter
     }()
     
-    required init(token: Token, canOnlyDispatchAction: Bool = false) {
-        super.init(token: token, canOnlyDispatchAction: canOnlyDispatchAction)
+    required init(token: Token, receiveState: Bool = true) {
+        super.init(token: token, receiveState: receiveState)
     }
     
     required init?(coder aDecoder: NSCoder) {

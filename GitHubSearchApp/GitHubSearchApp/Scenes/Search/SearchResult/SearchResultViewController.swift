@@ -14,23 +14,23 @@ import SnapKit
 class SearchResultViewController: NSViewControllerComponent {
     
     private lazy var helloComponent: HelloViewControllerComponent = {
-        return HelloViewControllerComponent(token: self.token, canOnlyDispatchAction: true)
+        return HelloViewControllerComponent(token: self.token, receiveState: false)
     }()
     
     private lazy var emptyComponent: EmptyViewControllerComponent = {
-        return EmptyViewControllerComponent(token: self.token, canOnlyDispatchAction: true)
+        return EmptyViewControllerComponent(token: self.token, receiveState: false)
     }()
     
     private lazy var errorComponent: ErrorViewControllerComponent = {
-        return ErrorViewControllerComponent(token: self.token, canOnlyDispatchAction: true)
+        return ErrorViewControllerComponent(token: self.token, receiveState: false)
     }()
     
     private lazy var loadingComponent: LoadingViewControllerComponent = {
-        return LoadingViewControllerComponent(token: self.token, canOnlyDispatchAction: true)
+        return LoadingViewControllerComponent(token: self.token, receiveState: false)
     }()
 
     private lazy var collectionViewComponent: NSCollectionViewComponent = {
-        let component = NSCollectionViewComponent(token: self.token, canOnlyDispatchAction: true)
+        let component = NSCollectionViewComponent(token: self.token, receiveState: false)
         return component
     }()
     

@@ -70,7 +70,7 @@ class HistoryItemComponent: NSViewComponent {
     
     private var keyword: String? = nil
     
-    override func configure<Item>(item: Item) {
+    override func configure<Item>(item: Item, at indexPath: IndexPath) {
         guard let historyItem = item as? HistoryItemModel else { return }
         keyword = historyItem.keyword
         keywordLabel.stringValue = historyItem.keyword

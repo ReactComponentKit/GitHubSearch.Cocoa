@@ -143,7 +143,7 @@ class RepoItemComponent: NSViewComponent {
         }.disposed(by: disposeBag)
     }
     
-    override func configure<Item>(item: Item) {
+    override func configure<Item>(item: Item, at indexPath: IndexPath) {
         guard let repoItem = item as? RepoItemModel else { return }
         self.htmlUrl = repoItem.repo.htmlUrl
         self.nameLabel.stringValue = repoItem.repo.name

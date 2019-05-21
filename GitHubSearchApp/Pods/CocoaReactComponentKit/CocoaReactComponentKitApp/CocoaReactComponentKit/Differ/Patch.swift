@@ -24,7 +24,7 @@ public extension Diff {
     /// - Parameters:
     ///   - to: The target collection (usually the target collecetion of the callee)
     /// - Returns: A sequence of steps to obtain `to` collection from the `from` one.
-    public func patch<T: Collection>(to: T) -> [Patch<T.Element>] {
+    func patch<T: Collection>(to: T) -> [Patch<T.Element>] {
         var shift = 0
         return map { element in
             switch element {

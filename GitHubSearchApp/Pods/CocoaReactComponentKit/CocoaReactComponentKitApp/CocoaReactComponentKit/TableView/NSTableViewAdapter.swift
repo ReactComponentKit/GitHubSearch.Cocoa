@@ -38,7 +38,7 @@ open class NSTableViewAdapter: NSObject, NSTableViewDelegate, NSTableViewDataSou
                 rootView = rootComponentView
             }
         } else {
-            rootView = itemModel.componentClass.init(token: token, canOnlyDispatchAction: true)
+            rootView = itemModel.componentClass.init(token: token, receiveState: false)
             let componentItem = TableViewComponentItem()
             componentItem.rootComponentView = rootView
             componentItem.translatesAutoresizingMaskIntoConstraints = false
@@ -51,8 +51,9 @@ open class NSTableViewAdapter: NSObject, NSTableViewDelegate, NSTableViewDataSou
             ])
         }
         
+        let indexPath = IndexPath(item: row, section: 0)
         rootView?.prepareForReuse()
-        rootView?.applyNew(item: itemModel)
+        rootView?.applyNew(item: itemModel, at: indexPath)
         
         return view
     }
@@ -76,8 +77,10 @@ open class NSTableViewAdapter: NSObject, NSTableViewDelegate, NSTableViewDataSou
             let newHashable = section.items.map { $0.id }
             
             let changes = oldHashable.extendedDiff(newHashable)
-            self.section = section
-            self.tableViewComponent?.tableView.apply(changes)
+            if changes.isEmpty == false {
+                self.section = section
+                self.tableViewComponent?.tableView.apply(changes)
+            }
         }
     }
 }
